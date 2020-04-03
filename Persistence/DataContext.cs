@@ -1,4 +1,5 @@
 ﻿using System;
+using Application;
 using Microsoft.EntityFrameworkCore;
 namespace Persistence
 {
@@ -6,6 +7,7 @@ namespace Persistence
     {
         public DataContext(DbContextOptions options): base(options){ }
          public  DbSet<value> values {get; set;}
+         public DbSet<Meeting> Meetings {get; set;}
          protected override void OnModelCreating(ModelBuilder builder){
              builder.Entity<value>()
              .HasData(
